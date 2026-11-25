@@ -33,7 +33,7 @@ test("archivos auxiliares publicados", async ({ request }) => {
     expect(res.status(), path).toBe(200);
   }
   const robots = await (await request.get("/robots.txt")).text();
-  expect(robots).toContain("Sitemap: https://federico.pradomacat.com/sitemap.xml");
+  expect(robots).toContain("Sitemap: https://pradomacat.com/sitemap.xml");
   // robots.txt nunca debe bloquear el sitio: Google no podría leer el noindex
   expect(robots).not.toMatch(/Disallow:\s*\/\s*$/m);
 });

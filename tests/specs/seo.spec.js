@@ -2,7 +2,7 @@
 const { test, expect } = require("@playwright/test");
 const { openPage } = require("./helpers");
 
-const SITE = "https://federico.pradomacat.com/";
+const SITE = "https://pradomacat.com/";
 
 test("título y descripción con longitud adecuada", async ({ page }) => {
   await openPage(page);

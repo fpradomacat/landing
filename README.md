@@ -1,7 +1,7 @@
 # Federico Prado Macat · Landing
 
 Landing de una página (HTML/CSS/JS sin frameworks) para las sesiones 1:1 de coaching + breathwork.
-Publicada en **https://federico.pradomacat.com**. Cada commit que llega a `master` se publica automáticamente.
+Publicada en **https://pradomacat.com**. Cada commit que llega a `master` se publica automáticamente.
 
 ## Archivos
 
@@ -94,7 +94,9 @@ No mostrar un precio "anterior" tachado si nunca se cobró.
 ## Publicación
 
 La web está conectada a través de Cloudflare: cada commit en `master` se publica solo en
-`federico.pradomacat.com`. El dominio principal (`pradomacat.com`) y `neyen.pradomacat.com` no se tocan.
+`pradomacat.com`, el dominio principal. `federico.pradomacat.com` (y `www.pradomacat.com`) deben
+redirigir con un 301 a `pradomacat.com` conservando la ruta; se configura en Cloudflare, no en este
+repositorio. `neyen.pradomacat.com` es otro proyecto y no se toca.
 
 ## Criterios de contenido
 
