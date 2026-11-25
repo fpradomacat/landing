@@ -16,6 +16,8 @@ Publicada en **https://federico.pradomacat.com**. Cada commit que llega a `maste
 | `robots.txt`, `sitemap.xml` | Indexación en buscadores |
 | `CNAME` | Subdominio |
 | `.claude/launch.json` | Servidor local para la vista previa en Claude |
+| `tests/` | Tests automáticos (ver abajo) |
+| `.github/workflows/tests.yml` | Ejecuta los tests en GitHub en cada push |
 
 Para verla en local:
 
@@ -24,6 +26,37 @@ python -m http.server 8080
 ```
 
 y abrir http://localhost:8080.
+
+## Tests automáticos
+
+En `tests/` hay una batería de tests con [Playwright](https://playwright.dev) y [axe](https://github.com/dequelabs/axe-core)
+que abren la web en un navegador real, en escritorio (1364×757) y en móvil (375×812). Comprueban:
+
+- **Carga:** sin errores de consola ni archivos rotos; `robots.txt`, sitemap e imágenes publicados.
+- **Maquetación:** sin scroll horizontal, inicio a pantalla completa, foto en 4:5, los enlaces del menú
+  dejan el título bajo la cabecera, las tarjetas de Precios entran en pantalla, menú móvil y botón "Reservar".
+- **Enlaces:** reservas a Calendly en pestaña nueva, anclas internas válidas, Neyen, YouTube y email.
+- **Animaciones:** nada queda oculto tras el scroll, con movimiento reducido ni sin JavaScript; la flecha se oculta.
+- **SEO:** longitudes de título y descripción, Open Graph, y que los precios y las preguntas frecuentes
+  de los datos estructurados coincidan con la página.
+- **Contenido:** sin palabras prohibidas por el brief (cura, sana, certificado, acreditado, garantiza…),
+  descargo y contraindicaciones presentes, imágenes livianas y sin EXIF, textos alternativos.
+- **Accesibilidad:** WCAG 2.1 AA con axe (contraste, etiquetas, estructura).
+
+Para ejecutarlos en local:
+
+```powershell
+cd tests
+npm install
+npx playwright install chromium
+npm test
+```
+
+`npm run test:ui` abre una interfaz para verlos paso a paso y `npm run report` muestra el último informe.
+
+En GitHub se ejecutan solos en cada push a `master` y en cada pull request (pestaña **Actions**).
+Ojo: la publicación automática no espera a los tests. Para no publicar algo roto, ejecuta `npm test`
+antes de hacer push, o trabaja en una rama y haz merge a `master` cuando los tests estén en verde.
 
 ## Enlaces externos
 
