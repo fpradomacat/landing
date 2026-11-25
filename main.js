@@ -45,6 +45,17 @@ toggle.addEventListener("click", () => setMenu(toggle.getAttribute("aria-expande
 nav.addEventListener("click", (e) => { if (e.target.closest("a")) setMenu(false); });
 document.addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });
 
+// Ocultar el indicador de "bajar" en cuanto la persona hace scroll
+const scrollCue = document.querySelector(".scroll-cue");
+const hideCue = () => {
+  if (window.scrollY > 40) {
+    scrollCue.classList.add("is-hidden");
+    window.removeEventListener("scroll", hideCue);
+  }
+};
+hideCue();
+window.addEventListener("scroll", hideCue, { passive: true });
+
 // Borde del header al hacer scroll
 const header = document.querySelector(".site-header");
 const onScroll = () => header.classList.toggle("is-scrolled", window.scrollY > 8);

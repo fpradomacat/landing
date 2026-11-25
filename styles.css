@@ -160,8 +160,35 @@ a:hover { color: var(--accent-deep); }
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 72px 0 88px;
+  display: flex;
+  align-items: center;
+  /* Ocupa toda la pantalla menos la cabecera (svh = sin contar las barras del navegador móvil) */
+  min-height: calc(100vh - 64px);
+  min-height: calc(100svh - 64px);
+  padding: 48px 0 88px;
   text-align: center;
+}
+.hero-inner { width: 100%; }
+
+/* Indicador sutil para bajar: aparece tras unos segundos y se va al hacer scroll */
+.scroll-cue {
+  position: absolute; left: 50%; bottom: 18px;
+  display: grid; place-items: center;
+  width: 44px; height: 44px; margin-left: -22px;
+  border-radius: 50%;
+  color: var(--ink-soft);
+  opacity: 0;
+  animation: cue-in 1s ease-out 2.8s forwards;
+  transition: opacity .4s;
+}
+.scroll-cue svg { animation: cue-bob 2.6s ease-in-out 3.8s infinite; }
+.scroll-cue:hover { color: var(--accent); }
+.scroll-cue.is-hidden { opacity: 0 !important; pointer-events: none; animation: none; }
+
+@keyframes cue-in { to { opacity: .75; } }
+@keyframes cue-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
 }
 .hero-inner { position: relative; max-width: 760px; }
 .lead { font-size: 1.15rem; color: var(--ink-soft); max-width: 32em; margin: 0 auto; }
@@ -401,7 +428,7 @@ a:hover { color: var(--accent-deep); }
   }
   .site-nav .btn { margin-top: 0; }
 
-  .hero { padding: 120px 0 136px; }
+  .hero { padding: 64px 0 104px; }
   .aura-1 { width: 560px; height: 560px; top: -180px; left: -120px; }
   .aura-2 { width: 520px; height: 520px; right: -80px; }
 
@@ -423,4 +450,8 @@ a:hover { color: var(--accent-deep); }
   .js :is(.section-head, .step, .checklist li, .about-photo, .about-text > *, .plan, .fine-print, .faq details, .cta-inner > *, .link-card) {
     opacity: 1; transform: none;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue { opacity: .75; }
 }
