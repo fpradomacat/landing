@@ -114,8 +114,13 @@ a:hover { color: var(--accent-deep); }
 
 .header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 64px; }
 
+.header-cta { margin-left: auto; margin-right: 6px; min-height: 38px; padding: 0.35em 1em; font-size: .9rem; }
+.about-cta { margin-top: 24px; font-weight: 500; }
+.about-cta a { text-decoration: none; }
+.about-cta a:hover { text-decoration: underline; }
+
 .brand {
-  font-family: var(--font-serif); font-size: 1.2rem;
+  font-family: var(--font-serif); font-size: clamp(1rem, 4.4vw, 1.2rem);
   color: var(--ink); text-decoration: none; white-space: nowrap;
 }
 .brand:hover { color: var(--ink); }
@@ -259,7 +264,7 @@ a:hover { color: var(--accent-deep); }
 .about { display: grid; gap: 32px; align-items: center; }
 .about-photo { margin: 0; }
 .about-photo img, .photo-placeholder {
-  width: 100%; max-width: min(72vw, 360px); aspect-ratio: 4 / 5; object-fit: cover;
+  width: 100%; height: auto; max-width: min(72vw, 360px); aspect-ratio: 4 / 5; object-fit: cover;
   border-radius: 200px 200px var(--radius) var(--radius);
   display: block; margin: 0 auto;
 }
@@ -288,14 +293,13 @@ a:hover { color: var(--accent-deep); }
 .facts strong { color: var(--ink); font-weight: 600; }
 
 /* Enlaces a Neyen y YouTube */
-.links-intro { margin: 32px 0 12px; color: var(--ink-soft); }
 .link-cards { display: grid; gap: 12px; }
 .link-card {
   display: flex; flex-direction: column; gap: 2px;
   padding: 18px 20px;
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: var(--radius);
   color: var(--ink);
   text-decoration: none;
   transition: border-color .25s, background-color .25s;
@@ -316,7 +320,7 @@ a:hover { color: var(--accent-deep); }
   cursor: pointer; list-style: none;
   display: flex; justify-content: space-between; align-items: center; gap: 16px;
   padding: 20px 0;
-  font-family: var(--font-serif); font-size: 1.2rem;
+  font-family: var(--font-serif); font-size: clamp(1rem, 4.4vw, 1.2rem);
 }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary::after {
@@ -367,7 +371,7 @@ a:hover { color: var(--accent-deep); }
 @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
 
 /* Aparición suave al hacer scroll (main.js añade .is-visible) */
-.js :is(.section-head, .step, .checklist li, .about-photo, .about-text > *, .plan, .fine-print, .faq details, .cta-inner > *) {
+.js :is(.section-head, .step, .checklist li, .about-photo, .about-text > *, .plan, .fine-print, .faq details, .cta-inner > *, .link-card) {
   opacity: 0;
   transform: translateY(28px);
   transition:
@@ -376,7 +380,7 @@ a:hover { color: var(--accent-deep); }
     background-color .25s, border-color .25s, color .25s;
 }
 .js .about-photo { transform: translateY(20px) scale(.96); }
-.js :is(.section-head, .step, .checklist li, .about-photo, .about-text > *, .plan, .fine-print, .faq details, .cta-inner > *).is-visible {
+.js :is(.section-head, .step, .checklist li, .about-photo, .about-text > *, .plan, .fine-print, .faq details, .cta-inner > *, .link-card).is-visible {
   opacity: 1;
   transform: none;
 }
@@ -403,7 +407,10 @@ a:hover { color: var(--accent-deep); }
 
   .section { padding: 104px 0; }
   .two-col { grid-template-columns: 0.8fr 1.2fr; gap: 56px; align-items: start; }
-  .about { grid-template-columns: 0.8fr 1.2fr; gap: 64px; }
+  .about { grid-template-columns: 0.8fr 1.2fr; gap: 64px; align-items: start; }
+  .about-photo { position: sticky; top: 104px; }
+  .header-cta { display: none; }
+  .link-cards { max-width: 760px; }
 }
 
 /* ---------- Accesibilidad: menos movimiento ---------- */
@@ -413,7 +420,7 @@ a:hover { color: var(--accent-deep); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .js :is(.section-head, .step, .checklist li, .about-photo, .about-text > *, .plan, .fine-print, .faq details, .cta-inner > *) {
+  .js :is(.section-head, .step, .checklist li, .about-photo, .about-text > *, .plan, .fine-print, .faq details, .cta-inner > *, .link-card) {
     opacity: 1; transform: none;
   }
 }
