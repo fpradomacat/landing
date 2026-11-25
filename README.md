@@ -8,7 +8,9 @@ Publicada en **https://federico.pradomacat.com**. Cada commit que llega a `maste
 | Archivo | Qué es |
 |---|---|
 | `index.html` | Contenido, textos y metadatos (SEO, Open Graph) |
-| `styles.css` | Estilos (colores y fuentes en `:root`) |
+| `tokens.css` | Tokens de diseño: colores, tipografía, espaciado, radios, botones (ver `DESIGN.md`) |
+| `styles.css` | Estilos de la página, construidos con los tokens |
+| `DESIGN.md` | Resumen del sistema de diseño y criterios de uso |
 | `main.js` | Link de reserva y email (objeto `CONFIG` arriba del archivo), menú móvil |
 | `assets/fede.webp`, `assets/fede.jpg` | Foto de "Sobre mí" (800×1000, sin metadatos EXIF) |
 | `assets/og-image.jpg` | Imagen al compartir el enlace en redes (1200×630) |
