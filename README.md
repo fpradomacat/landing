@@ -35,6 +35,8 @@ y abrir http://localhost:8080.
 
 ## Pendientes
 
+- [ ] **Quitar el `noindex`** de `index.html` cuando esté la revisión legal (está puesto a propósito;
+  `robots.txt` debe seguir permitiendo el acceso para que Google pueda leerlo). Después, dar de alta la web en Search Console.
 - [ ] **Revisión legal** (España y Argentina): descargo, contraindicaciones, aviso legal y privacidad
   (la web no recoge datos, pero las reservas pasan por Calendly).
 - [ ] **Contraindicaciones**: confirmar la lista con la formación.
