@@ -268,7 +268,21 @@ a:hover { color: var(--accent-deep); }
   background: linear-gradient(170deg, var(--sky) 0%, var(--peach) 100%);
   color: #fff; font-family: var(--font-serif); font-size: 4rem;
 }
-.facts { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 10px; }
+.about-quote {
+  margin: 28px 0;
+  padding: 4px 0 4px 22px;
+  border-left: 3px solid var(--sky);
+}
+.about-quote p {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.3rem;
+  line-height: 1.45;
+  color: var(--ink);
+}
+.facts-title { margin: 28px 0 0; font-family: var(--font-serif); font-size: 1.15rem; }
+.facts { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 10px; }
 .facts li { padding-left: 18px; position: relative; color: var(--ink-soft); }
 .facts li::before { content: ""; position: absolute; left: 0; top: .75em; width: 6px; height: 6px; border-radius: 50%; background: var(--warm); }
 .facts strong { color: var(--ink); font-weight: 600; }
