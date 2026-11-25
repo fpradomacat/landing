@@ -2,9 +2,9 @@
 // Configuración: cambia estos valores y se actualizan en toda la página
 // =========================================================
 const CONFIG = {
-  // TODO: link de reserva (Cal.com, Calendly o WhatsApp, p. ej. "https://wa.me/34XXXXXXXXX?text=Hola%20Fede")
-  // Mientras esté vacío, los botones llevan a la sección final de la página.
-  bookingUrl: "",
+  // Link de reserva de la llamada exploratoria (también está escrito en index.html
+  // para que funcione sin JavaScript; si cambia, basta con cambiarlo aquí).
+  bookingUrl: "https://calendly.com/pradomacat/exploratoria",
   // TODO: confirmar email de contacto
   email: "hola@pradomacat.com",
 };

@@ -259,7 +259,7 @@ a:hover { color: var(--accent-deep); }
 .about { display: grid; gap: 32px; align-items: center; }
 .about-photo { margin: 0; }
 .about-photo img, .photo-placeholder {
-  width: 100%; max-width: 360px; aspect-ratio: 4 / 5; object-fit: cover;
+  width: 100%; max-width: min(72vw, 360px); aspect-ratio: 4 / 5; object-fit: cover;
   border-radius: 200px 200px var(--radius) var(--radius);
   display: block; margin: 0 auto;
 }

@@ -20,8 +20,10 @@
   <meta property="og:title" content="Federico Prado Macat · Coaching y breathwork 1:1 online">
   <meta property="og:description" content="Un espacio para frenar, respirar y escucharte. Sesiones 1:1 online de coaching y respiración consciente conectada.">
   <meta property="og:url" content="https://federico.pradomacat.com/">
-  <!-- TODO: crear og-image.jpg (1200x630) y descomentar -->
-  <!-- <meta property="og:image" content="https://federico.pradomacat.com/assets/og-image.jpg"> -->
+  <meta property="og:image" content="https://federico.pradomacat.com/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Federico Prado Macat">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="stylesheet" href="styles.css">
@@ -61,7 +63,7 @@
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#precios">Precios</a>
         <a href="#preguntas">Preguntas</a>
-        <a class="btn btn-small" href="#reservar" data-booking>Llamada gratuita</a>
+        <a class="btn btn-small" href="https://calendly.com/pradomacat/exploratoria" target="_blank" rel="noopener" data-booking>Llamada gratuita</a>
       </nav>
     </div>
   </header>
@@ -84,7 +86,7 @@
           el tema; yo acompaño el proceso.
         </p>
         <div class="hero-actions">
-          <a class="btn" href="#reservar" data-booking>Reserva una llamada gratuita</a>
+          <a class="btn" href="https://calendly.com/pradomacat/exploratoria" target="_blank" rel="noopener" data-booking>Reserva una llamada gratuita</a>
           <a class="btn btn-ghost" href="#sesion">Cómo es una sesión</a>
         </div>
         <p class="hero-note">20 minutos por videollamada, sin compromiso.</p>
@@ -140,21 +142,35 @@
     </section>
 
     <!-- 4. SOBRE MÍ -->
-    <!-- TODO: revisar texto, añadir escuela y año del Practitioner en PNL, y foto real -->
+    <!-- TODO: confirmar texto -->
     <section id="sobre-mi" class="section">
       <div class="container about">
         <figure class="about-photo">
-          <!-- Reemplazar por: <img src="assets/fede.jpg" alt="Federico Prado Macat" width="480" height="600" loading="lazy"> -->
-          <div class="photo-placeholder" role="img" aria-label="Foto de Federico Prado Macat (pendiente)">FP</div>
+          <picture>
+            <source srcset="assets/fede.webp" type="image/webp">
+            <img src="assets/fede.jpg" alt="Federico Prado Macat en Bali, frente a un campo de arroz" width="800" height="1000" loading="lazy" decoding="async">
+          </picture>
         </figure>
         <div class="about-text">
           <p class="eyebrow">Sobre mí</p>
           <h2>Hola, soy Fede</h2>
           <p>
-            Llegué a la respiración consciente buscando un espacio para mí, y
-            me encontré con una forma de escucharme que no conocía. Desde
-            entonces me formo para acompañar a otras personas en ese mismo
-            camino, combinándolo con herramientas de coaching.
+            En 2019 me mudé de Argentina a España. Fue una decisión enorme y
+            trajo consigo episodios de ansiedad, que trabajé en terapia y con
+            mucha introspección. Ese proceso me mostró lo valioso que es tener
+            un espacio para mirarse con calma.
+          </p>
+          <p>
+            Más adelante, viviendo en Bali con mi novia, fui a una clase de
+            respiración consciente conectada y tuve una de las experiencias más
+            reveladoras de mi vida. Desde entonces practico breathwork a diario,
+            y hace más de 8 meses que acompaño sesiones 1:1.
+          </p>
+          <p>
+            Siempre me atrajeron la psicología y la comunicación, verbal y no
+            verbal. En los últimos años estudio sobre la mente humana: hice el
+            Practitioner en PNL, acompañé unas 25 sesiones online y descubrí la
+            meditación, que hoy comparto en mi canal.
           </p>
           <p>
             Mi forma de trabajar es cercana y sin fórmulas: escucho, pregunto
@@ -167,7 +183,8 @@
           </p>
           <ul class="facts">
             <li><strong>Formación en curso</strong> en coaching y en respiración consciente conectada (finaliza en 2027).</li>
-            <li><strong>Practitioner en PNL</strong> <!-- TODO: escuela, año -->.</li>
+            <li><strong>Practitioner en PNL</strong> en el Institut Gestalt de Barcelona (2025).</li>
+            <li><strong>Práctica diaria</strong> de breathwork desde Bali, y de meditación desde 2025.</li>
             <li><strong>Además</strong>, trabajo como desarrollador de software (Angular).</li>
           </ul>
 
@@ -208,7 +225,7 @@
               <li>1 sesión de 90 min</li>
               <li>Pago por sesión</li>
             </ul>
-            <a class="btn btn-ghost" href="#reservar" data-booking>Empezar con una llamada</a>
+            <a class="btn btn-ghost" href="https://calendly.com/pradomacat/exploratoria" target="_blank" rel="noopener" data-booking>Empezar con una llamada</a>
           </article>
 
           <article class="plan plan-featured">
@@ -220,7 +237,7 @@
               <li>5 sesiones de 90 min</li>
               <li>Válido durante 4 meses</li>
             </ul>
-            <a class="btn" href="#reservar" data-booking>Empezar con una llamada</a>
+            <a class="btn" href="https://calendly.com/pradomacat/exploratoria" target="_blank" rel="noopener" data-booking>Empezar con una llamada</a>
           </article>
 
           <article class="plan plan-quiet">
@@ -231,7 +248,7 @@
               <li>10 sesiones de 90 min</li>
               <li>Válido durante 8 meses</li>
             </ul>
-            <a class="btn btn-ghost" href="#reservar" data-booking>Empezar con una llamada</a>
+            <a class="btn btn-ghost" href="https://calendly.com/pradomacat/exploratoria" target="_blank" rel="noopener" data-booking>Empezar con una llamada</a>
           </article>
         </div>
 
@@ -296,8 +313,8 @@
     <section id="reservar" class="section cta">
       <div class="container narrow cta-inner">
         <h2>¿Empezamos con una charla?</h2>
-        <p>Una llamada gratuita de 20 minutos para conocernos y ver si este espacio es para ti.</p>
-        <a class="btn btn-light" href="#reservar" data-booking>Reserva tu llamada gratuita</a>
+        <p>Una llamada gratuita de 20 minutos para conocernos y ver si este espacio es para ti. Eliges el horario que prefieras en mi agenda.</p>
+        <a class="btn btn-light" href="https://calendly.com/pradomacat/exploratoria" target="_blank" rel="noopener" data-booking>Reserva tu llamada gratuita</a>
         <p class="cta-alt">¿Prefieres escribir? <a href="mailto:hola@pradomacat.com" data-email>hola@pradomacat.com</a></p>
       </div>
     </section>
