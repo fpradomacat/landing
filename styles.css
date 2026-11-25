@@ -100,6 +100,9 @@ a:hover { color: var(--accent-deep); }
 .btn:hover { background: var(--accent-deep); border-color: var(--accent-deep); color: #fff; }
 .btn-ghost { background: transparent; color: var(--accent); }
 .btn-ghost:hover { background: rgba(62, 113, 137, .08); color: var(--accent-deep); }
+/* Sobre las manchas de color del inicio, fondo claro para mantener el contraste */
+.hero .btn-ghost { background: rgba(255, 253, 249, .8); }
+.hero .btn-ghost:hover { background: #fff; }
 .btn-small { min-height: 40px; padding: 0.4em 1.1em; font-size: 0.95rem; }
 
 /* ---------- Header ---------- */
@@ -216,6 +219,8 @@ a:hover { color: var(--accent-deep); }
 
 /* ---------- Secciones ---------- */
 .section { padding: 72px 0; }
+/* Al saltar desde el menú, el título queda cerca de la cabecera en lugar de bajo todo el relleno */
+.section[id] { scroll-margin-top: -48px; }
 .section-sand { background: var(--sand); }
 .section-sky { background: var(--sky-tint); }
 .section-head { margin-bottom: 40px; max-width: 640px; }
@@ -433,6 +438,22 @@ a:hover { color: var(--accent-deep); }
   .aura-2 { width: 520px; height: 520px; right: -80px; }
 
   .section { padding: 104px 0; }
+  .section[id] { scroll-margin-top: -80px; }
+
+  /* Precios: cabecera en dos columnas para que las tarjetas entren en pantalla */
+  #precios .section-head {
+    max-width: none;
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 440px);
+    column-gap: 48px;
+    align-items: end;
+    margin-bottom: 36px;
+  }
+  #precios .section-head > :not(.launch-note) { grid-column: 1; }
+  #precios .section-head > :last-child:not(.launch-note) { margin-bottom: 0; }
+  #precios .section-head > p:not(.eyebrow):not(.launch-note) { margin-bottom: 0; }
+  #precios .launch-note { grid-column: 2; grid-row: 1 / span 3; align-self: end; margin: 0; }
+  .plan { padding: 26px 26px 24px; }
   .two-col { grid-template-columns: 0.8fr 1.2fr; gap: 56px; align-items: start; }
   .about { grid-template-columns: 0.8fr 1.2fr; gap: 64px; align-items: start; }
   .about-photo { position: sticky; top: 104px; }
