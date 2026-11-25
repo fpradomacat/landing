@@ -4,46 +4,215 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- TODO antes de publicar: quitar esta línea para que Google indexe la página -->
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content="index, follow, max-image-preview:large">
 
-  <title>Federico Prado Macat · Coaching y breathwork 1:1 online</title>
-  <meta name="description" content="Sesiones 1:1 online de coaching y respiración consciente conectada (breathwork) con Federico Prado Macat. Reserva una llamada gratuita para conocernos.">
+  <title>Coaching y breathwork online 1:1 · Federico Prado Macat</title>
+  <meta name="description" content="Sesiones 1:1 online de coaching y respiración consciente conectada (breathwork) para frenar, ganar claridad y escucharte. Primera llamada gratuita.">
+  <meta name="author" content="Federico Prado Macat">
   <link rel="canonical" href="https://federico.pradomacat.com/">
   <meta name="theme-color" content="#faf6f0">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
-  <!-- Open Graph -->
+  <!-- Open Graph / redes sociales -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_ES">
   <meta property="og:site_name" content="Federico Prado Macat">
-  <meta property="og:title" content="Federico Prado Macat · Coaching y breathwork 1:1 online">
-  <meta property="og:description" content="Un espacio para frenar, respirar y escucharte. Sesiones 1:1 online de coaching y respiración consciente conectada.">
+  <meta property="og:title" content="Coaching y breathwork online 1:1 · Federico Prado Macat">
+  <meta property="og:description" content="Un espacio para frenar, respirar y escucharte. Sesiones 1:1 online de coaching y respiración consciente conectada. Primera llamada gratuita.">
   <meta property="og:url" content="https://federico.pradomacat.com/">
   <meta property="og:image" content="https://federico.pradomacat.com/assets/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Federico Prado Macat">
+  <meta property="og:image:alt" content="Federico Prado Macat en Bali, frente a un campo de arroz">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Coaching y breathwork online 1:1 · Federico Prado Macat">
+  <meta name="twitter:description" content="Sesiones 1:1 online de coaching y respiración consciente conectada. Primera llamada gratuita.">
+  <meta name="twitter:image" content="https://federico.pradomacat.com/assets/og-image.jpg">
 
   <script>document.documentElement.className = "js";</script>
   <link rel="stylesheet" href="styles.css">
 
+  <!-- Datos estructurados. Si cambias precios o preguntas frecuentes, actualízalos también aquí. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Federico Prado Macat · Coaching y breathwork",
-    "url": "https://federico.pradomacat.com/",
-    "description": "Sesiones 1:1 online de coaching y respiración consciente conectada.",
-    "areaServed": "Online",
-    "availableLanguage": "es",
-    "founder": {
-      "@type": "Person",
-      "name": "Federico Prado Macat",
-      "alternateName": "Fede Prado",
-      "sameAs": ["https://www.youtube.com/@meditawork"]
-    }
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://federico.pradomacat.com/#website",
+        "url": "https://federico.pradomacat.com/",
+        "name": "Federico Prado Macat",
+        "inLanguage": "es",
+        "publisher": {
+          "@id": "https://federico.pradomacat.com/#fede"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://federico.pradomacat.com/#fede",
+        "name": "Federico Prado Macat",
+        "alternateName": "Fede Prado",
+        "url": "https://federico.pradomacat.com/",
+        "image": "https://federico.pradomacat.com/assets/fede.jpg",
+        "jobTitle": "Coach y facilitador de breathwork en formación",
+        "knowsAbout": [
+          "Coaching",
+          "Breathwork",
+          "Respiración consciente conectada",
+          "Meditación",
+          "PNL"
+        ],
+        "hasCredential": {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Practitioner en PNL",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Institut Gestalt",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Barcelona",
+              "addressCountry": "ES"
+            }
+          }
+        },
+        "sameAs": [
+          "https://www.youtube.com/@meditawork",
+          "https://neyen.pradomacat.com"
+        ]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://federico.pradomacat.com/#servicio",
+        "name": "Coaching y breathwork 1:1 online · Federico Prado Macat",
+        "url": "https://federico.pradomacat.com/",
+        "image": "https://federico.pradomacat.com/assets/og-image.jpg",
+        "description": "Sesiones individuales online de 90 minutos que combinan coaching y respiración consciente conectada (breathwork). Primera llamada de 20 minutos gratuita.",
+        "provider": {
+          "@id": "https://federico.pradomacat.com/#fede"
+        },
+        "founder": {
+          "@id": "https://federico.pradomacat.com/#fede"
+        },
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "España"
+          },
+          {
+            "@type": "Place",
+            "name": "Latinoamérica"
+          }
+        ],
+        "availableLanguage": "es",
+        "priceRange": "45 € - 55 € por sesión",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Sesiones y paquetes",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "name": "Llamada exploratoria gratuita",
+              "description": "Videollamada de 20 minutos para conocernos, sin compromiso.",
+              "price": "0",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://federico.pradomacat.com/#precios"
+            },
+            {
+              "@type": "Offer",
+              "name": "Sesión suelta",
+              "description": "1 sesión online de 90 minutos.",
+              "price": "55",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://federico.pradomacat.com/#precios"
+            },
+            {
+              "@type": "Offer",
+              "name": "Paquete 5 sesiones",
+              "description": "5 sesiones online de 90 minutos, válido durante 4 meses.",
+              "price": "250",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://federico.pradomacat.com/#precios"
+            },
+            {
+              "@type": "Offer",
+              "name": "Paquete 10 sesiones",
+              "description": "10 sesiones online de 90 minutos, válido durante 8 meses.",
+              "price": "450",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://federico.pradomacat.com/#precios"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://federico.pradomacat.com/#preguntas",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Esto es terapia?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. El coaching y el breathwork no son terapia psicológica ni tratamiento médico, y no los sustituyen. Pueden ser un complemento a otros procesos. Si estás en tratamiento o tienes una condición de salud, consúltalo antes con tu profesional."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué pasa en la llamada gratuita?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Son unos 20 minutos por videollamada. Nos conocemos, me cuentas qué buscas, te explico cómo trabajo y repasamos juntos si hay algo que haga desaconsejable la práctica de respiración. Si encaja, agendamos la primera sesión. Si no, no pasa nada."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Las sesiones son online?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí, todas son por videollamada. Solo necesitas una conexión estable y un lugar donde puedas estar tranquilo o tranquila durante 90 minutos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué necesito para una sesión?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Un espacio sin interrupciones, auriculares, algo donde recostarte (una esterilla, el sofá o la cama), una manta y agua. Mejor no comer en abundancia en las 2 horas previas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Necesito experiencia previa?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Te explico la técnica paso a paso y vamos a tu ritmo."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Hay casos en los que no se recomienda?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. La respiración consciente conectada no se recomienda, o requiere autorización médica previa, en casos de: Embarazo. Enfermedades cardiovasculares o hipertensión. Epilepsia o antecedentes de convulsiones. Trastornos psicóticos, trastorno bipolar o trastorno de pánico. Glaucoma, desprendimiento de retina o cirugía reciente. Si tienes dudas, lo hablamos en la llamada gratuita."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cómo cancelo o cambio una sesión?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Puedes cambiar o cancelar sin coste avisando con al menos 24 horas de antelación. Con menos aviso, la sesión se considera realizada. Los paquetes tienen una vigencia (4 u 8 meses) desde la primera sesión. El pago se hace por adelantado; te paso los medios de pago tras la llamada."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>

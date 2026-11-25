@@ -5,7 +5,7 @@ const CONFIG = {
   // Link de reserva de la llamada exploratoria (también está escrito en index.html
   // para que funcione sin JavaScript; si cambia, basta con cambiarlo aquí).
   bookingUrl: "https://calendly.com/pradomacat/exploratoria",
-  // TODO: confirmar email de contacto
+  // Email de contacto
   email: "hola@pradomacat.com",
 };
 
