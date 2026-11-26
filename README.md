@@ -20,6 +20,7 @@ Publicada en **https://pradomacat.com**. Cada commit que llega a `master` se pub
 | `.claude/launch.json` | Servidor local para la vista previa en Claude |
 | `tests/` | Tests automáticos (ver abajo) |
 | `.github/workflows/tests.yml` | Ejecuta los tests en GitHub en cada push |
+| `.githooks/pre-commit` | Ejecuta los tests antes de cada commit (ver "Tests automáticos") |
 
 Para verla en local:
 
@@ -57,8 +58,15 @@ npm test
 `npm run test:ui` abre una interfaz para verlos paso a paso y `npm run report` muestra el último informe.
 
 En GitHub se ejecutan solos en cada push a `master` y en cada pull request (pestaña **Actions**).
-Ojo: la publicación automática no espera a los tests. Para no publicar algo roto, ejecuta `npm test`
-antes de hacer push, o trabaja en una rama y haz merge a `master` cuando los tests estén en verde.
+Ojo: la publicación automática no espera a los tests. **Los tests se ejecutan siempre antes de cada
+commit.** El hook `.githooks/pre-commit` lo hace solo y cancela el commit si fallan. Se activa una vez
+por clon con:
+
+```powershell
+git config core.hooksPath .githooks
+```
+
+(`git commit --no-verify` lo salta en una emergencia.)
 
 ## Enlaces externos
 

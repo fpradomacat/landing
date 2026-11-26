@@ -155,7 +155,9 @@ a:hover { color: var(--color-accent-hover); }
   /* Ocupa toda la pantalla menos la cabecera (svh = sin contar las barras del navegador móvil) */
   min-height: calc(100vh - var(--header-height));
   min-height: calc(100svh - var(--header-height));
-  padding: var(--space-12) 0 88px;
+  /* Margen holgado para que el contenido quepa en móviles de 812 px de alto sin desbordar
+     (abajo, espacio para la flecha: 18 px + 44 px) */
+  padding: var(--space-8) 0 72px;
   text-align: center;
 }
 .hero-inner { width: 100%; }

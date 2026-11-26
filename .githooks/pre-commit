@@ -1,0 +1,17 @@
+#!/bin/sh
+# Ejecuta los tests antes de cada commit; si fallan, el commit se cancela.
+# Activación (una vez por clon):  git config core.hooksPath .githooks
+# Saltarlo en una emergencia:     git commit --no-verify
+
+cd "$(git rev-parse --show-toplevel)/tests" || exit 1
+
+if [ ! -d node_modules ]; then
+  echo "pre-commit: faltan dependencias. Ejecuta: cd tests && npm install && npx playwright install chromium"
+  exit 1
+fi
+
+echo "pre-commit: ejecutando los tests..."
+if ! npx playwright test --reporter=line; then
+  echo "pre-commit: los tests fallan, commit cancelado. Informe: cd tests && npm run report"
+  exit 1
+fi
