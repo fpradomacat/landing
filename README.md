@@ -36,7 +36,7 @@ En `tests/` hay una batería de tests con [Playwright](https://playwright.dev) y
 que abren la web en un navegador real, en escritorio (1364×757) y en móvil (375×812). Comprueban:
 
 - **Carga:** sin errores de consola ni archivos rotos; `robots.txt`, sitemap e imágenes publicados.
-- **Maquetación:** sin scroll horizontal, inicio a pantalla completa, foto en 4:5, los enlaces del menú
+- **Maquetación:** sin scroll horizontal, el inicio llena la pantalla con el botón principal visible, foto en 4:5, los enlaces del menú
   dejan el título bajo la cabecera, las tarjetas de Precios entran en pantalla, menú móvil y botón "Reservar".
 - **Enlaces:** reservas a Calendly en pestaña nueva, anclas internas válidas, Neyen, YouTube y email.
 - **Animaciones:** nada queda oculto tras el scroll, con movimiento reducido ni sin JavaScript; la flecha se oculta.
