@@ -74,7 +74,7 @@ window.addEventListener("hashchange", openFromHash);
 // Animaciones de scroll
 // =========================================================
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const REVEAL = ".section-head, .step, .checklist li, .about-photo, .about-text > *, .plan, .fine-print, .faq details, .cta-inner > *, .link-card";
+const REVEAL = ".section-head, .step, .checklist li, .about-photo, .about-text > *, .plan, .testimonial, .fine-print, .faq details, .cta-inner > *, .link-card";
 const revealEls = [...document.querySelectorAll(REVEAL)];
 
 if (reduceMotion || !("IntersectionObserver" in window)) {

@@ -243,16 +243,6 @@ a:hover { color: var(--color-accent-hover); }
 }
 
 /* Precios */
-.launch-note {
-  display: inline-block;
-  margin-top: var(--space-1);
-  padding: 10px var(--space-4);
-  border-radius: var(--radius-lg);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  color: var(--color-text) !important;
-  font-size: var(--fs-sm);
-}
 .plans { display: grid; gap: var(--space-5); align-items: stretch; }
 .plan {
   display: flex; flex-direction: column;
@@ -394,7 +384,7 @@ a:hover { color: var(--color-accent-hover); }
 @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
 
 /* Aparición suave al hacer scroll (main.js añade .is-visible) */
-.js :is(.section-head, .step, .checklist li, .about-photo, .about-text > *, .plan, .fine-print, .faq details, .cta-inner > *, .link-card) {
+.js :is(.section-head, .step, .checklist li, .about-photo, .about-text > *, .plan, .testimonial, .fine-print, .faq details, .cta-inner > *, .link-card) {
   opacity: 0;
   transform: translateY(28px);
   transition:
@@ -403,15 +393,30 @@ a:hover { color: var(--color-accent-hover); }
     background-color var(--duration-fast), border-color var(--duration-fast), color var(--duration-fast);
 }
 .js .about-photo { transform: translateY(20px) scale(.96); }
-.js :is(.section-head, .step, .checklist li, .about-photo, .about-text > *, .plan, .fine-print, .faq details, .cta-inner > *, .link-card).is-visible {
+.js :is(.section-head, .step, .checklist li, .about-photo, .about-text > *, .plan, .testimonial, .fine-print, .faq details, .cta-inner > *, .link-card).is-visible {
   opacity: 1;
   transform: none;
 }
+
+/* ---------- Testimonios ---------- */
+.testimonials { display: grid; gap: var(--space-5); }
+.testimonial {
+  margin: 0; padding: var(--space-6);
+  background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl);
+  display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-4);
+}
+.testimonial blockquote { margin: 0; }
+.testimonial p {
+  margin: 0; font-family: var(--font-serif); font-style: italic;
+  font-size: var(--fs-lg); line-height: var(--lh-quote); color: var(--color-text);
+}
+.testimonial figcaption { font-size: var(--fs-sm); color: var(--color-warm); }
 
 /* ---------- Tablet / escritorio ---------- */
 @media (min-width: 720px) {
   .steps { grid-template-columns: repeat(3, 1fr); gap: var(--space-10); }
   .plans { grid-template-columns: repeat(3, 1fr); }
+  .testimonials { grid-template-columns: repeat(2, 1fr); }
   .footer-inner { grid-template-columns: 2fr 1fr; align-items: end; }
 }
 
@@ -427,19 +432,7 @@ a:hover { color: var(--color-accent-hover); }
   .aura-1 { width: 560px; height: 560px; top: -180px; left: -120px; }
   .aura-2 { width: 520px; height: 520px; right: -80px; }
 
-  /* Precios: cabecera en dos columnas para que las tarjetas entren en pantalla */
-  #precios .section-head {
-    max-width: none;
-    display: grid;
-    grid-template-columns: 1fr minmax(0, 440px);
-    column-gap: var(--space-12);
-    align-items: end;
-    margin-bottom: 36px;
-  }
-  #precios .section-head > :not(.launch-note) { grid-column: 1; }
-  #precios .section-head > :last-child:not(.launch-note) { margin-bottom: 0; }
-  #precios .section-head > p:not(.eyebrow):not(.launch-note) { margin-bottom: 0; }
-  #precios .launch-note { grid-column: 2; grid-row: 1 / span 3; align-self: end; margin: 0; }
+  #precios .section-head { margin-bottom: 36px; }
   .plan { padding: 26px 26px var(--space-6); }
   .two-col { grid-template-columns: 0.8fr 1.2fr; gap: var(--space-14); align-items: start; }
   .about { grid-template-columns: 0.8fr 1.2fr; gap: var(--space-16); align-items: start; }
@@ -452,7 +445,7 @@ a:hover { color: var(--color-accent-hover); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
-  .js :is(.section-head, .step, .checklist li, .about-photo, .about-text > *, .plan, .fine-print, .faq details, .cta-inner > *, .link-card) {
+  .js :is(.section-head, .step, .checklist li, .about-photo, .about-text > *, .plan, .testimonial, .fine-print, .faq details, .cta-inner > *, .link-card) {
     opacity: 1; transform: none;
   }
   .scroll-cue { opacity: .75; }
