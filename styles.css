@@ -184,6 +184,14 @@ a:hover { color: var(--color-accent-hover); }
 .lead { font-size: var(--fs-lg); color: var(--color-text-muted); max-width: 32em; margin: 0 auto; }
 .hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-3); margin: var(--space-8) 0 14px; }
 .hero-note { font-size: var(--fs-xs); color: var(--color-text-muted); margin: 0; }
+/* Foto del inicio: círculo pequeño arriba en móvil, arco a la derecha en escritorio */
+.hero-inner { display: flex; flex-direction: column; align-items: center; }
+.hero-inner > * { width: 100%; }
+.hero-photo { order: -1; width: auto; margin: 0 0 var(--space-5); }
+.hero-photo img {
+  display: block; width: 76px; height: 76px; object-fit: cover; object-position: 50% 20%;
+  border-radius: var(--radius-round); box-shadow: var(--shadow-halo);
+}
 
 /* Aura: manchas de color difuminadas que "respiran" detrás del texto */
 .hero-aura { position: absolute; inset: 0; pointer-events: none; }
@@ -375,6 +383,7 @@ a:hover { color: var(--color-accent-hover); }
 .hero-inner > :nth-child(3) { animation-delay: .45s; }
 .hero-inner > :nth-child(4) { animation-delay: .65s; }
 .hero-inner > :nth-child(5) { animation-delay: .8s; }
+.hero-inner > :nth-child(6) { animation-delay: 0s; }
 .hero-aura { animation: fade-in 2s ease-out both; will-change: transform; }
 
 @keyframes rise {
@@ -428,7 +437,19 @@ a:hover { color: var(--color-accent-hover); }
   }
   .site-nav .btn { margin-top: 0; }
 
-  .hero { padding: var(--space-16) 0 var(--space-26); }
+  .hero { padding: var(--space-16) 0 var(--space-26); text-align: left; }
+  .hero-inner {
+    max-width: var(--container); display: grid; align-items: center;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr); column-gap: var(--space-14);
+  }
+  .hero-inner > :not(.hero-photo) { grid-column: 1; }
+  .hero .lead { margin: 0; }
+  .hero-actions { justify-content: flex-start; }
+  .hero-photo { order: 0; grid-column: 2; grid-row: 1 / span 5; margin: 0; justify-self: center; }
+  .hero-photo img {
+    width: min(100%, 340px); height: auto; aspect-ratio: 4 / 5; object-position: center; box-shadow: none;
+    border-radius: var(--radius-arch) var(--radius-arch) var(--radius-xl) var(--radius-xl);
+  }
   .aura-1 { width: 560px; height: 560px; top: -180px; left: -120px; }
   .aura-2 { width: 520px; height: 520px; right: -80px; }
 
